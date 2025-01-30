@@ -80,7 +80,6 @@ void saveOrderToFile(float roomTotal, float foodTotal, float totalBill) {
     fprintf(file, "\nTotal Bill: %.2f rs\n", totalBill);
 
     fclose(file);
-   // printf("Order saved to file: %s\n", filename);
 }
 
 void registerUser() {
@@ -193,6 +192,42 @@ void foodMenu(float *foodTotal) {
                 else if (choice == 3) { strcpy(itemName, "Vada"); item_cost = 30; }
                 else { printf("Invalid choice.\n"); continue; }
                 break;
+            case 3:
+                printf("1. Full Meals - 80rs\n2. Half Meals - 60rs\n3. Biryani - 75rs\n");
+                printf("Enter your choice: ");
+                scanf("%d", &choice);
+                if (choice == 1){strcpy(itemName, "Full meals"); item_cost = 80;}
+                else if (choice == 2){strcpy(itemName, "Half meals"); item_cost = 60;}
+                else if (choice == 3){strcpy(itemName, "Biryani"); item_cost = 75;}
+                else { printf("Invalid choice.\n"); continue; }
+                break;
+            case 4:
+                printf("1. Filter Coffee - 20rs\n2. Masala Tea - 15rs\n3. Lemon tea - 20rs\n");
+                printf("Enter your choice: ");
+                scanf("%d", &choice);
+                if (choice == 1){strcpy(itemName, "Filter coffee"); item_cost = 20;}
+                else if (choice == 2){strcpy(itemName, "Masala tea"); item_cost = 15;}
+                else if (choice == 3){strcpy(itemName, "Lemaon tea"); item_cost = 20;}
+                else { printf("Invalid choice.\n"); continue; }     
+                break;
+             case 5:
+                printf("1. Gulab Jamun - 20rs\n2. Rasgulla - 25rs\n3. Payasam - 30rs\n");
+                printf("Enter your choice: ");
+                scanf("%d", &choice);
+                if (choice == 1){strcpy(itemName, "Gulab jamun"); item_cost = 20;}
+                else if (choice == 2){strcpy(itemName, "Rasgulla"); item_cost = 25;}
+                else if (choice == 3){strcpy(itemName, "Payasam"); item_cost = 30;}
+                else { printf("Invalid choice.\n"); continue; }
+                break;
+            case 6:
+                printf("1. Papad - 10rs\n2. Pickle - 5rs\n3. Chutney - 15rs\n");
+                printf("Enter your choice: ");
+                scanf("%d", &choice);
+                if (choice == 1){strcpy(itemName, "Papad"); item_cost = 10;}
+                else if (choice == 2){strcpy(itemName, "Pickle"); item_cost = 5;}
+                else if (choice == 3){strcpy(itemName, "Chutney"); item_cost = 15;}
+                else { printf("Invalid choice.\n"); continue; }        
+                break;
             default:
                 printf("Invalid category.\n");
                 continue;
@@ -232,6 +267,16 @@ void roomBooking(float *roomTotal) {
             printf("Enter number of persons (max 3 beds): ");
             scanf("%d", &bedno);
             bill = 500 + (bedno - 1) * 250;
+            break;
+        case 3:
+            printf("Enter number of persons (max 3 beds): ");
+            scanf("%d", &bedno);
+            bill = 1500 + (bedno - 1) * 750;
+            break;
+        case 4:
+            printf("Enter number of rooms (max 3 rooms): ");
+            scanf("%d", &bedno);
+            bill = 2500 + (bedno - 1) * 1250;
             break;
         default:
             printf("Invalid input.\n");
